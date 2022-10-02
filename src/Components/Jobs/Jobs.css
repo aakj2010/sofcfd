@@ -1,0 +1,26 @@
+
+.job-miniNav {
+    border-radius: 50px;
+    color: white;
+}
+.job-miniNav Link {
+    text-decoration: none;
+}
+.job-miniNav:hover {
+    background-color: silver;
+    color: white;
+}
+.miniNav1 {
+    background-color: rgba(255, 94, 0, 0.726) !important;
+    color: white !important;
+}
+.input {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.btn1 {
+    background-color: rgba(192, 192, 192, 0.438);
+}
+

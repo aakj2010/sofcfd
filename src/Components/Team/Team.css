@@ -1,0 +1,16 @@
+
+.learnbtn {
+    background-color: rgba(255, 94, 0, 0.726);
+    font-weight: bold;
+    color: white;
+}
+.team-miniNav {
+    border-radius: 50px;
+}
+.team-miniNav:hover {
+    background-color: silver;
+}
+.miniNav1 {
+    background-color: rgba(255, 94, 0, 0.726) !important;
+    color: white !important;
+}

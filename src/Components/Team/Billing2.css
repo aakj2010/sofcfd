@@ -1,0 +1,18 @@
+
+.billing .billing--info {
+    margin: 4rem 7%;
+}
+.billing .billing--info .billing--info--content {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 15px 10px;
+    margin-left: 20px;
+    width: 30%;
+}
+.billing .billing--info .billing--info--content button {
+    color: #379fef;
+    border: 1px solid #379fef;
+}
+h4{
+    color : #007bff; 
+}

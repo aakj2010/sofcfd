@@ -1,0 +1,35 @@
+.cards, .publicPlatform .publicPlatform--public, .publicPlatform .publicPlatform--private {
+  width: 40%;
+  padding: 2rem 10px;
+  padding-bottom: 0;
+  border-radius: 4px;
+  color: black;
+  text-align: center;
+}
+.cards img, .publicPlatform .publicPlatform--public img, .publicPlatform .publicPlatform--private img, .cards a, .publicPlatform .publicPlatform--public a, .publicPlatform .publicPlatform--private a {
+  margin: 5px;
+}
+.publicPlatform {
+  display: flex;
+  position: relative;
+  bottom: 15rem;
+  margin-left: 15rem;
+}
+.publicPlatform .publicPlatform--public {
+  background-image: linear-gradient(0deg, #fee3cd 30%, #fff);
+  margin-right: 3rem;
+}
+.publicPlatform .publicPlatform--public .publicPlatform--public--btn {
+  background-color: #f2740d;
+  color: white;
+}
+.publicPlatform .publicPlatform--public a {
+  text-decoration: underline;
+  color: gray;
+}
+.publicPlatform .publicPlatform--private {
+  background-image: linear-gradient(0deg, #cde9fe 30%, #fff);
+}
+
+
+
