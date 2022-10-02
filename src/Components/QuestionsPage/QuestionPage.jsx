@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import LeftSidebar from "./LeftSidebar";
 import RightSidebar from "./RightSidebar";
 import UserQuestions from "./UserQuestions";
-import Pagination from "./Pagination";
+// import Pagination from "./Pagination";
 
 function QuestionPage() {
   return (
@@ -59,7 +59,7 @@ function QuestionPage() {
           <UserQuestions />
 
           {/* Pagination added */}
-          <Pagination />
+          {/* <Pagination /> */}
         </div>
 
         {/* Right Sidebar added */}

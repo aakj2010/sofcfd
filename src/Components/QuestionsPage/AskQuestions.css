@@ -1,9 +1,14 @@
 .ask{
-    width: 50%;
-    /* margin: 0; */
+    width: 60%;
+    margin: 3rem;
 }
 .answer{
     width: 100%;
+}
+.postanswer{
+    min-width: 130%;
+    /* margin: 3rem;
+    padding: 1rem; */
 }
 
 .voting {

@@ -31,7 +31,7 @@ const LoginPage = () => {
         onSubmit: async (values) => {
             await axios.post(`${env.api}/login`, values);
             alert("Logged in Succesfully");
-            navigate("/questions");
+            navigate("/home");
         }
     });
     return (
@@ -163,6 +163,10 @@ const LoginPage = () => {
                         >
                             Login
                         </button>
+
+                        <Link to="/signup">
+                            <small> Create an Account?</small>
+                        </Link>
 
                     </form>
                 </div>

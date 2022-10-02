@@ -23,7 +23,7 @@ function App() {
         <nav className=' navbar navbar-expand-lg navbar-light bg-light px-5'>
           <span className="navbar-toggler-icon mx-2 ml-5"></span>
 
-          <Link to="/" className="navbar-brand">
+          <Link to="/home" className="navbar-brand">
             <img src={logo} alt="" width="160px" />
           </Link>
           <button
@@ -46,7 +46,7 @@ function App() {
                 </Link>
               </li>
               <li lassName="nav-item mr-4">
-                <Link to="/" className="nav-link">
+                <Link to="/home" className="nav-link">
                   Products
                 </Link>
               </li>
@@ -75,7 +75,7 @@ function App() {
                 aria-describedby="inputGroup-sizing-sm"
                 placeholder="Search..."
               />
-              <Link to="/login" className="nav-link">
+              <Link to="/" className="nav-link">
                 <button
                   className="btn btn-outline-primary my-sm-0 btn-sm px-3"
                   type="submit"
@@ -99,14 +99,14 @@ function App() {
           </div>
         </nav>
         <Routes>
-          <Route index element={<HomePage />} />
+          <Route path="home" element={<HomePage />} />
           <Route path='ask_a_question' element={<AskQuestions />} />
           <Route path='about' element={<About />} />
           <Route path='team' element={<Team />} />
           <Route path='questions' element={<QuestionsPage />} />
           <Route path='answer/:id' element={<Answer />} />
           <Route path='jobs' element={<Jobs />} />
-          <Route path='login' element={<LoginPage />} />
+          <Route index element={<LoginPage />} />
           <Route path='signup' element={<RegisterPage />} />
           <Route path='footer' element={<Footer />} />
         </Routes>

@@ -24,6 +24,9 @@ function AskQuestions() {
             if (values.question === "") {
                 errors.question = "Please Enter Title";
             }
+            if(values.answer ===''){
+                errors.answer = "Please Enter Description"
+            }
 
             if (values.tags === "") {
                 errors.tags = "Please Enter Tags";
@@ -33,7 +36,7 @@ function AskQuestions() {
         },
         onSubmit: async (values) => {
             // let User = await axios.post("https://62fe35d041165d66bfbb1342.mockapi.io/Teachers", values);
-             await axios.post(`${env.api}/postquestions`, values);
+            await axios.post(`${env.api}/postquestions`, values);
             alert("Question Added Succesfully")
             navigate("/questions")
         }
@@ -72,7 +75,13 @@ function AskQuestions() {
                             <button type="button" class="btn btn-link "> More</button>
                         </div>
                         <div class="mb-3">
-                            <textarea name="answer" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            <textarea className={`form-control ${formik.errors.answer ? `input-error` : ``}`}
+                                name="answer" id="exampleFormControlTextarea1"
+                                rows="4"
+                                value={formik.values.answer}
+                                onChange={formik.handleChange}>
+                            </textarea>
+                            <span style={{ color: 'red' }}>{formik.errors.answer}</span>
                         </div>
                         <div className="mt-3">
                             <label className='fw-bold fs-2'>Tags</label><br />
