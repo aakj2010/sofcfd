@@ -59,8 +59,8 @@ function RegisterPage() {
       if (values.name === "") {
         errors.name = "Please Enter Name";
       }
-      
-      
+
+
       if (values.email === "") {
         errors.email = "Please Enter Email";
       }
@@ -73,7 +73,7 @@ function RegisterPage() {
     },
     onSubmit: async (values) => {
       // let User = await axios.post("https://62fe35d041165d66bfbb1342.mockapi.io/Teachers", values);
-      await axios.post(`${env.api}/signup`,values);
+      await axios.post(`${env.api}/signup`, values);
       alert("User Created Succesfully")
       navigate("/login")
     }
@@ -182,6 +182,10 @@ function RegisterPage() {
                     Sign up
                   </button>
 
+                  <Link to="/">
+                    <small> Already have an Account?</small>
+                  </Link>
+
 
                   {/* <div className="col-lg-6">
                                         <input className="btn btn-primary mt-2" type={"submit"} value="Submit" />
@@ -190,139 +194,6 @@ function RegisterPage() {
                 </form>
               </div>
 
-              {/* <div className="col-md-7 col-lg-5 col-xl-5 bt-light border p-5 pb-0">
-                <h2
-                  className="text-center"
-                  style={{
-                    color: "rgb(242, 116, 13)",
-                    fontFamily: "serif",
-                  }}
-                >
-                  Sign up
-                </h2>
-                <p className="text-center pb-1">~~~~~~~~~~~</p>
-                <form>
-                  <div className="form-outline mb-4">
-                    <label className="form-label" for="form1Example13">
-                      Full Name
-                    </label>
-                    <div class="input-group flex-nowrap">
-                      <div class="input-group-prepend">
-                        <span
-                          class="input-group-text"
-                          id="addon-wrapping"
-                          style={{
-                            color: "rgb(242, 116, 13)",
-                            backgroundColor: "rgba(242, 116, 13, 0.308)",
-                          }}
-                        >
-                          <i class="fas fa-user"></i>
-                        </span>
-                      </div>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Username"
-                        aria-label="Username"
-                        aria-describedby="addon-wrapping"
-                      
-                      />
-                    </div>
-                  </div>
-                  <div className="form-outline mb-4">
-                    <label className="form-label" for="form1Example23">
-                      Email
-                    </label>
-                    <div class="input-group flex-nowrap">
-                      <div class="input-group-prepend">
-                        <span
-                          class="input-group-text"
-                          id="addon-wrapping"
-                          style={{
-                            color: "rgb(242, 116, 13)",
-                            backgroundColor: "rgba(242, 116, 13, 0.308)",
-                          }}
-                        >
-                          <i class="fas fa-envelope"></i>
-                        </span>
-                      </div>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="hello@gmail.com"
-                        aria-label="gmail"
-                        aria-describedby="addon-wrapping"
-                      />
-                    </div>
-                  </div>
-                  <div className="form-outline mb-4">
-                    <label className="form-label" for="form1Example23">
-                      Password
-                    </label>
-                    <div class="input-group flex-nowrap">
-                      <div class="input-group-prepend">
-                        <span
-                          class="input-group-text"
-                          id="addon-wrapping"
-                          style={{
-                            color: "rgb(242, 116, 13)",
-                            backgroundColor: "rgba(242, 116, 13, 0.308)",
-                          }}
-                        >
-                          <i class="fas fa-key"></i>
-                        </span>
-                      </div>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Password"
-                        aria-label="Username"
-                        aria-describedby="addon-wrapping"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="form-check mb-2">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value=""
-                      id="form1Example3"
-                    />
-                    <label className="form-check-label" for="form1Example3">
-                      {" "}
-                      Remember me{" "}
-                    </label>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="btn btn-block text-light"
-                    style={{ backgroundColor: "rgb(10, 149, 255)" }}
-                  >
-                    Sign up
-                  </button>
-                  <button
-                    type="submit"
-                    className="btn btn-block bg-light border"
-                  >
-                    <img src={gLogo} alt="" width="20px" className="mr-1" />
-                    Google
-                  </button>
-                  <button type="submit" className="btn btn-dark btn-block">
-                    <i class="fab fa-github mr-1"></i>
-                    Github
-                  </button>
-                  <button
-                    type="submit"
-                    className="btn bt btn-lg btn-block text-light"
-                    style={{ backgroundColor: "rgb(56, 84, 153)" }}
-                  >
-                    <i class="fab fa-facebook-square mr-2"></i>
-                    Facebook
-                  </button>
-                </form>
-                            </div> */}
               {/* Signup form Ends */}
             </div>
           </div>

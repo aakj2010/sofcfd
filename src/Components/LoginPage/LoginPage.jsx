@@ -31,13 +31,13 @@ const LoginPage = () => {
         onSubmit: async (values) => {
             try {
                 let loginData = await axios.post(`${env.api}/login`, values);
-                if(loginData.status === 200){
+                if (loginData.status === 200) {
                     alert("Logged in Succesfully");
                     navigate("/home");
                     window.localStorage.setItem("app-token", loginData.data.token)
                 }
                 console.log(loginData);
-                
+
             } catch (error) {
                 alert(error.response.data.message)
                 console.log(error);
@@ -50,8 +50,11 @@ const LoginPage = () => {
             <div className="container d-flex align-items-center justify-content-center col-lg-8 col-md-8">
 
                 <div className="border px-5 pb-5 m-5 col-md-7 col-lg-5 col-xl-5 loginPage--form loginPage" >
-                    <div className="loginPage--form--img mt-3">
+                    <div className='d-flex align-items-center justify-content-center mt-3'>
                         <img src={Logo} alt="" width="60px" />
+                    </div>
+                    <div className="d-flex align-items-center justify-content-center loginPage--form--img">
+
                         <h4 className="center mt-0 " style={{
                             color: "rgb(242, 116, 13)",
                             fontFamily: "serif",
@@ -179,7 +182,7 @@ const LoginPage = () => {
                         <Link to="/signup">
                             <small> Create an Account?</small>
                         </Link>
-                        <p>Username:person@gamil.com</p>
+                        <p>Username:person1@gamil.com</p>
                         <p>Password:admin123</p>
 
                     </form>
