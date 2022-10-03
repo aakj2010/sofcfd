@@ -17,7 +17,13 @@ const UserQuestions = () => {
     
     let loadData = async () => {
         // setLoading(true)
-        let questions = await axios.get(`${env.api}/questions`);
+        let questions = await axios.get(`${env.api}/questions`,
+        // {
+        //   headers: {
+        //     'authorization' : window.localStorage.setItem("app-token")
+        // }
+        // }
+        );
         console.log(questions);
         setQuestions(questions.data)
         // setLoading(false)

@@ -75,7 +75,11 @@ function Answer() {
 
     let loadAnswer = async () => {
         try {
-            let answers = await axios.get(`${env.api}/answer/${params.id}`);
+            let answers = await axios.get(`${env.api}/answer/${params.id}`,{
+                headers: {
+                    'authorization' : window.localStorage.setItem("app-token")
+                }
+            });
             console.log(answers);
             setAnswer(answers.data)
             console.log(answers.data);
