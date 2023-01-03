@@ -2,7 +2,7 @@
 import './App.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import logo from "./Components/Images/logo1.png";
 import LoginPage from './Components/LoginPage';
 import RegisterPage from './Components/RegisterPage';
@@ -14,9 +14,23 @@ import Team from './Components/Team';
 import Jobs from './Components/Jobs';
 import AskQuestions from './Components/QuestionsPage/AskQuestions';
 import Answer from './Components/QuestionsPage/Answer';
+import ProtectedRoute from './Components/ProtectedRoute';
+// import ProtectedRoute from './Components/ProtectedRoute';
 
 
 function App() {
+
+  // const Navigate = useNavigate()
+
+  const user = window.localStorage.getItem("app-token");
+
+
+  const handleLogout = () => {
+    window.localStorage.removeItem("app-token");
+    // window.location.href = "/";
+    <Navigate to='/' />
+  }
+
   return (
     <>
       <BrowserRouter>
@@ -81,34 +95,56 @@ function App() {
                   type="submit"
                   style={{ backgroundColor: "#e3f2fd", color: "gray" }}
                 >
-                  Log in
+                  Login
                 </button>
               </Link>
 
-              <Link to="/" className="nav-link">
-                <button
-                  className="btn btn-primary my-sm-0 btn-sm px-3"
-                  type="submit"
-                >
 
-                  Logout
-                </button>
-              </Link>
+              <button className="btn btn-primary my-sm-0 btn-sm px-3"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
 
             </form>
           </div>
         </nav>
         <Routes>
-          <Route path="home" element={<HomePage />} />
-          <Route path='ask_a_question' element={<AskQuestions />} />
-          <Route path='about' element={<About />} />
-          <Route path='team' element={<Team />} />
-          <Route path='questions' element={<QuestionsPage />} />
-          <Route path='answer/:id' element={<Answer />} />
-          <Route path='jobs' element={<Jobs />} />
-          <Route index element={<LoginPage />} />
+          <Route path='/' element={<LoginPage />} />
           <Route path='signup' element={<RegisterPage />} />
-          <Route path='footer' element={<Footer />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path='home' element={<HomePage />} />
+            <Route path='ask_a_question' element={<AskQuestions />} />
+            <Route path='about' element={!user ? <About /> : <LoginPage />} />
+            <Route path='team' element={<Team />} />
+            <Route path='questions' element={<QuestionsPage />} />
+            <Route path='answer/:id' element={<Answer />} />
+            <Route path='jobs' element={!user ? <Jobs /> : <LoginPage />} />
+            <Route path='footer' element={<Footer />} />
+          </Route>
+
+
+
+          {/* <Route path='protected' element={<ProtectedRoute />}>
+            <Route path='home' element={<HomePage />} />
+            <Route path='ask_a_question' element={<AskQuestions />} />
+            <Route path='about' element={user ? <About /> : <LoginPage />} />
+            <Route path='team' element={user ? <Team /> : <LoginPage />} />
+            <Route path='questions' element={<QuestionsPage />} />
+            <Route path='answer/:id' element={user ? <Answer /> : <LoginPage />} />
+            <Route path='jobs' element={user ? <Jobs /> : <LoginPage />} />
+            <Route path='footer' element={<Footer />} />
+          </Route> */}
+          {/* <ProtectedRoute path='questions' element={<QuestionsPage />} /> */}
+
+          {/* <ProtectedRoute path='home' element={<HomePage />} />
+          <ProtectedRoute path='ask_a_question' element={<AskQuestions />} />
+          <ProtectedRoute path='about' element={<About />} />
+          <ProtectedRoute path='team' element={<Team />} />
+          <ProtectedRoute path='questions' element={<QuestionsPage />} />
+          <ProtectedRoute path='answer/:id' element={<Answer />} />
+          <ProtectedRoute path='jobs' element={<Jobs />} />
+          <ProtectedRoute path='footer' element={<Footer />} /> */}
         </Routes>
 
       </BrowserRouter>

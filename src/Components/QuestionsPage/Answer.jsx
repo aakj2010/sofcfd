@@ -9,6 +9,7 @@ import LeftSidebar from "./LeftSidebar";
 import RightSidebar from "./RightSidebar";
 
 function Answer() {
+
     const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
@@ -84,7 +85,7 @@ function Answer() {
             setAnswer(answers.data)
             console.log(answers.data);
         } catch (error) {
-
+            console.log(error);
         }
 
     };

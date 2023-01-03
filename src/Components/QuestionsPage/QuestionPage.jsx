@@ -1,12 +1,37 @@
-import React from "react";
 import "./Questions.css";
 import { Link } from "react-router-dom";
 import LeftSidebar from "./LeftSidebar";
 import RightSidebar from "./RightSidebar";
 import UserQuestions from "./UserQuestions";
 // import Pagination from "./Pagination";
+import axios from "axios";
+import { env } from '../config';
+import { useEffect, useState } from "react";
 
 function QuestionPage() {
+
+   // const navigate = useNavigate()
+   const [questions, setQuestions] = useState([]);
+    // const [isLoading, setLoading] = useState(false)
+
+   useEffect(() => {
+       loadData()
+   }, [])
+   
+   let loadData = async () => {
+      //  setLoading(true)
+       let questions = await axios.get(`${env.api}/questions`,
+       {
+         headers: {
+           'authorization' : window.localStorage.setItem("app-token", questions.data.token)
+       }
+       }
+       );
+       console.log(questions);
+       setQuestions(questions.data)
+       // setLoading(false)/
+   };
+
   return (
     <>
     <div className="container-fluid questions">

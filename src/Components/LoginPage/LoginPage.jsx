@@ -4,7 +4,6 @@ import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Logo from "../Images/logo2.png";
-import gLogo from "../Images/g.png";
 import { env } from '../config';
 
 
@@ -32,7 +31,7 @@ const LoginPage = () => {
             try {
                 let loginData = await axios.post(`${env.api}/login`, values);
                 if (loginData.status === 200) {
-                    alert("Logged in Succesfully");
+                    // alert("Logged in Succesfully");
                     navigate("/home");
                     window.localStorage.setItem("app-token", loginData.data.token)
                 }
@@ -60,74 +59,6 @@ const LoginPage = () => {
                             fontFamily: "serif",
                         }}>Login</h4>
                     </div>
-
-                    <button
-                        type="submit"
-                        className="btn btn-lg btn-block bg-light btn-sm border mt-3"
-                    >
-                        <img src={gLogo} alt="" width="15px" className="mr-1" />
-                        Google
-                    </button>
-                    <button type="submit" className="btn btn-dark btn-block">
-                        {/* <i class="fab fa-github-square mr-1"></i> */}
-                        <i class="fab fa-github mr-1"></i>
-                        Github
-                    </button>
-
-
-                    {/* Input Box startes */}
-                    {/* <div className="form-outline mt-4 mb-4">
-                        <label className="form-label" for="form1Example23">
-                            Email
-                        </label>
-                        <div class="input-group flex-nowrap">
-                            <div class="input-group-prepend">
-                                <span
-                                    class="input-group-text"
-                                    id="addon-wrapping"
-                                    style={{
-                                        color: "rgb(242, 116, 13)",
-                                        backgroundColor: "rgba(242, 116, 13, 0.308)",
-                                    }}
-                                >
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                            </div>
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="@gmail.com"
-                                aria-label="gmail"
-                                aria-describedby="addon-wrapping"
-                            />
-                        </div>
-                    </div>
-                    <div className="form-outline mb-4">
-                        <label className="form-label" for="form1Example23">
-                            Password
-                        </label>
-                        <div class="input-group flex-nowrap">
-                            <div class="input-group-prepend">
-                                <span
-                                    class="input-group-text"
-                                    id="addon-wrapping"
-                                    style={{
-                                        color: "rgb(242, 116, 13)",
-                                        backgroundColor: "rgba(242, 116, 13, 0.308)",
-                                    }}
-                                >
-                                    <i class="fas fa-key"></i>
-                                </span>
-                            </div>
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Password"
-                                aria-label="Username"
-                                aria-describedby="addon-wrapping"
-                            />
-                        </div>
-                    </div> */}
 
                     <form onSubmit={formik.handleSubmit}>
 
@@ -182,9 +113,6 @@ const LoginPage = () => {
                         <Link to="/signup">
                             <small> Create an Account?</small>
                         </Link>
-                        <p>Username:person1@gamil.com</p>
-                        <p>Password:admin123</p>
-
                     </form>
                 </div>
             </div>
