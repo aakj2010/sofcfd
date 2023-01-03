@@ -81,7 +81,7 @@ function App() {
               </li>
             </ul>
             <form className="form-inline mx-2 my-lg-0 mr-5">
-              <span className="fas fa-search search"></span>
+              
               <input
                 type="text"
                 className="form-control pr-5 pl-4 searchInput"
