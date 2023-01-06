@@ -35,14 +35,7 @@ function AskQuestions() {
             return errors;
         },
         onSubmit: async (values) => {
-            // let User = await axios.post("https://62fe35d041165d66bfbb1342.mockapi.io/Teachers", values);
-            let User =  await axios.post(`${env.api}/postquestions`, values,
-            {
-                headers: {
-                    'authorization' : window.localStorage.setItem("app-token", User.data.token)
-                }
-            }
-            );
+             await axios.post(`${env.api}/postquestions`, values);
             alert("Question Added Succesfully")
             navigate("/questions")
         }

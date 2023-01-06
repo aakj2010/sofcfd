@@ -20,15 +20,15 @@ function QuestionPage() {
    
    let loadData = async () => {
       //  setLoading(true)
-       let questions = await axios.get(`${env.api}/questions`,
+       let question = await axios.get(`${env.api}/questions`,
        {
          headers: {
            'authorization' : window.localStorage.setItem("app-token", questions.data.token)
        }
        }
        );
-       console.log(questions);
-       setQuestions(questions.data)
+       console.log(question);
+       setQuestions(question.data)
        // setLoading(false)/
    };
 
